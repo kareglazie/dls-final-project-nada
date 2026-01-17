@@ -1,10 +1,18 @@
+import os
+import sys
+
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
+os.environ["FORCE_CUDA"] = "0"
+os.environ["TORCH_CUDA_ARCH_LIST"] = "7.0"  # Минимальная поддерживаемая архитектура
+import tempfile
+temp_ext_dir = tempfile.mkdtemp()
+os.environ["TORCH_EXTENSIONS_DIR"] = temp_ext_dir
+
 import streamlit as st
 import torch
 import numpy as np
 from PIL import Image
 import io
-import os
-import sys
 import json
 import pandas as pd
 import gdown
@@ -133,6 +141,7 @@ def load_models():
         os.environ["CUDA_HOME"] = temp_cuda
         os.makedirs(os.path.join(temp_cuda, "lib64"), exist_ok=True)
         os.makedirs(os.path.join(temp_cuda, "lib"), exist_ok=True)
+        os.makedirs(os.path.join(temp_cuda, "include"), exist_ok=True)
 
     base_model_path = download_base_model()
     if not base_model_path:

@@ -1,4 +1,4 @@
-# StyleGAN-NADA: Text-Driven Adaptation of Generative Models
+# StyleGAN-NADA: Text-Driven Adaptation of Generative Models (учебный проект для [Deep Learning School](https://stepik.org/org/dlschool))
 
 ## О проекте
 
