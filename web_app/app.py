@@ -6,10 +6,11 @@ import io
 import os
 import sys
 import json
-import matplotlib.pyplot as plt
 import pandas as pd
 import gdown
 from pathlib import Path
+import subprocess
+import shutil
 
 st.set_page_config(
     page_title="StyleGAN-NADA Generator",
@@ -47,6 +48,47 @@ BEST_MODELS = {
 }
 
 @st.cache_resource
+def download_stylegan_nada():
+    stylegan_nada_dir = Path("stylegan_nada")
+    
+    if stylegan_nada_dir.exists() and (stylegan_nada_dir / "ZSSGAN").exists():
+        return str(stylegan_nada_dir)
+    
+    with st.spinner("Клонирование репозитория stylegan-nada из GitHub..."):
+        try:
+            result = subprocess.run(
+                ["git", "--version"],
+                capture_output=True,
+                text=True
+            )
+            if result.returncode != 0:
+                st.error("Git не установлен! Установите Git для клонирования репозитория.")
+                return None
+            
+            if stylegan_nada_dir.exists():
+                shutil.rmtree(stylegan_nada_dir)
+            
+            result = subprocess.run(
+                ["git", "clone", "https://github.com/rinongal/stylegan-nada.git", str(stylegan_nada_dir)],
+                capture_output=True,
+                text=True,
+                timeout=300  
+            )
+            
+            if result.returncode == 0 and (stylegan_nada_dir / "ZSSGAN").exists():
+                return str(stylegan_nada_dir)
+            else:
+                st.error(f"Ошибка при клонировании репозитория: {result.stderr}")
+                return None
+                
+        except subprocess.TimeoutExpired:
+            st.error("Таймаут при клонировании репозитория. Попробуйте позже.")
+            return None
+        except Exception as e:
+            st.error(f"Ошибка при клонировании репозитория: {e}")
+            return None
+
+@st.cache_resource
 def download_base_model():
     models_dir = Path("models")
     models_dir.mkdir(exist_ok=True)
@@ -78,13 +120,12 @@ def load_models():
     if not base_model_path:
         return None
     
-    stylegan_nada_dir = "stylegan_nada"
-    if os.path.exists(stylegan_nada_dir):
-        sys.path.append(stylegan_nada_dir)
-        sys.path.append(os.path.join(stylegan_nada_dir, "ZSSGAN"))
-    else:
-        st.warning("Директория stylegan_nada не найдена!")
+    stylegan_nada_dir = download_stylegan_nada()
+    if not stylegan_nada_dir:
         return None
+    
+    sys.path.append(stylegan_nada_dir)
+    sys.path.append(os.path.join(stylegan_nada_dir, "ZSSGAN"))
     
     if not torch.cuda.is_available() and 'CUDA_HOME' not in os.environ:
         import tempfile
