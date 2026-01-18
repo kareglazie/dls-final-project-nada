@@ -1,0 +1,94 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Временные файлы
+*.log
+*.tmp
+*.cache
+
+# data/
+# datasets/
+
+stylegan_nada/
+web_app/download_models.py
+web_app/app_basic.py
+notebooks/inference_output
+
+models/**
+!models/ffhq.pt
+!models/final_model_anime_style_freeze_2.pt
+!models/final_model_sketch_style_freeze_0.pt
+!models/final_model_joker_style_freeze_2.pt
+!models/final_model_oil_painting_style_freeze_2.pt
+
+output/**
+!output/visualizations/
+!output/visualizations/**
+!output/detailed_metrics_all_experiments.json
+!output/anime_style_freeze_2/
+!output/anime_style_freeze_2/sample/
+!output/anime_style_freeze_2/sample/dst_000000.jpg
+!output/anime_style_freeze_2/sample/dst_000300.jpg
+!output/anime_style_freeze_2/sample/dst_000599.jpg
+!output/sketch_style_freeze_0/
+!output/sketch_style_freeze_0/sample/
+!output/sketch_style_freeze_0/sample/dst_000000.jpg
+!output/sketch_style_freeze_0/sample/dst_000300.jpg
+!output/sketch_style_freeze_0/sample/dst_000599.jpg
+!output/joker_style_freeze_2/
+!output/joker_style_freeze_2/sample/
+!output/joker_style_freeze_2/sample/dst_000000.jpg
+!output/joker_style_freeze_2/sample/dst_000300.jpg
+!output/joker_style_freeze_2/sample/dst_000599.jpg
+!output/oil_painting_style_freeze_2/
+!output/oil_painting_style_freeze_2/sample/
+!output/oil_painting_style_freeze_2/sample/dst_000000.jpg
+!output/oil_painting_style_freeze_2/sample/dst_000300.jpg
+!output/oil_painting_style_freeze_2/sample/dst_000599.jpg
+!output/anime_style_freeze_0/
+!output/anime_style_freeze_0/sample/
+!output/anime_style_freeze_0/sample/dst_000300.jpg
+!output/anime_style_freeze_4/
+!output/anime_style_freeze_4/sample/
+!output/anime_style_freeze_4/sample/dst_000300.jpg

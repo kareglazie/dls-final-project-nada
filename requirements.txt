@@ -1,0 +1,11 @@
+streamlit
+torch
+torchvision
+pillow
+numpy
+clip-anytorch
+opencv-python
+gdown
+tqdm
+pandas
+ninja

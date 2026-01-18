@@ -1,0 +1,24 @@
+models/final_model_anime_style_freeze_2.pt filter=lfs diff=lfs merge=lfs -text
+models/final_model_sketch_style_freeze_0.pt filter=lfs diff=lfs merge=lfs -text
+models/final_model_joker_style_freeze_2.pt filter=lfs diff=lfs merge=lfs -text
+models/final_model_oil_painting_style_freeze_2.pt filter=lfs diff=lfs merge=lfs -text
+models/ffhq.pt filter=lfs diff=lfs merge=lfs -text
+
+output/visualizations/*.png filter=lfs diff=lfs merge=lfs -text
+output/visualizations/**/*.png filter=lfs diff=lfs merge=lfs -text
+output/detailed_metrics_all_experiments.json filter=lfs diff=lfs merge=lfs -text
+output/anime_style_freeze_2/sample/dst_000000.jpg filter=lfs diff=lfs merge=lfs -text
+output/anime_style_freeze_2/sample/dst_000300.jpg filter=lfs diff=lfs merge=lfs -text
+output/anime_style_freeze_2/sample/dst_000599.jpg filter=lfs diff=lfs merge=lfs -text
+output/sketch_style_freeze_0/sample/dst_000000.jpg filter=lfs diff=lfs merge=lfs -text
+output/sketch_style_freeze_0/sample/dst_000300.jpg filter=lfs diff=lfs merge=lfs -text
+output/sketch_style_freeze_0/sample/dst_000599.jpg filter=lfs diff=lfs merge=lfs -text
+output/joker_style_freeze_2/sample/dst_000000.jpg filter=lfs diff=lfs merge=lfs -text
+output/joker_style_freeze_2/sample/dst_000300.jpg filter=lfs diff=lfs merge=lfs -text
+output/joker_style_freeze_2/sample/dst_000599.jpg filter=lfs diff=lfs merge=lfs -text
+output/oil_painting_style_freeze_2/sample/dst_000000.jpg filter=lfs diff=lfs merge=lfs -text
+output/oil_painting_style_freeze_2/sample/dst_000300.jpg filter=lfs diff=lfs merge=lfs -text
+output/oil_painting_style_freeze_2/sample/dst_000599.jpg filter=lfs diff=lfs merge=lfs -text
+output/anime_style_freeze_0/sample/dst_000300.jpg filter=lfs diff=lfs merge=lfs -text
+output/anime_style_freeze_4/sample/dst_000300.jpg filter=lfs diff=lfs merge=lfs -text
+

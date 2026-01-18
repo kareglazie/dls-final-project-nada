@@ -1,0 +1,8 @@
+[client]
+showErrorDetails = "full"
+
+[logger]
+level = "debug"
+
+[server]
+headless = true
